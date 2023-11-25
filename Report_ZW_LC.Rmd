@@ -43,7 +43,7 @@ output: html_notebook
 
 ### **References**
 
-
+## ---------------------------------------------------------------------------------------------
 
 ### **Abstract** (2.5M)
 ##### **Aim and Rationale**
@@ -52,8 +52,17 @@ output: html_notebook
 Post-Traumatic Stress Disorder, Acrophobia and Social Anxiety Disorders can be treated through the use of VR exposure therapy (VRET). The integration of VR into therapy practices, showcases the potential it has to make positive changes to treatments for anxiety disorder.
             
 ##### **Participants and Setting**
+* There was **180** participants in total for this study. They were **randomly sampled** from the clinic's client list. **96 were Male** and **84 were Female**. They were randomly assigned into the two groups.
+* **Control (Traditional CBT, no VR) (M = 48, F = 42)**
+* **Experimental (VR-Based Therapy) (M = 48, F = 42)**
+* All participants were between the ago of **18-40** years old.
+
 ##### **Experiment Design**
+* The two groups proceeded to go to 12 weeks of treatment with a therapist in 50 minute sessions. During the treatment sessions, the patients either experienced the traditional CBT or underwent the VR-Based therapy.
+
 ##### **Results Gathering**
+* In this study, the participants were asked to self-report the severity of the anxiety they were feeling. The measurements used were the 'State-Trait Anxiety Inventory' and 'Generalised Anxiety Disorder 7 Item Scale'. Both use a range of 0 - 10.
+
 ##### **Findings/ Implications**
 
 ### 4 - **Introduction** (15M)
