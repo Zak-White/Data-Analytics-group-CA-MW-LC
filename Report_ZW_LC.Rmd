@@ -70,14 +70,18 @@ Post-Traumatic Stress Disorder, Acrophobia and Social Anxiety Disorders can be t
 ##### **Topic and Context**
 * The amount of people who suffer from anxiety disorders worldwide is approximately 301 million, World Health Organisation, 2019.
 * Anxiety disorders are mental disorders which can include a variety of feelings such as anxiety and fear. These feelings can cause individuals to experience a 'racing heart' and/ or 'shaky limbs'. Typically, anxiety is a response to stress but individuals who suffer from anxiety disorders tend to feel these unwanted emotions all the time. This can seriously affect their performance in physical activities, work, school or friendships.
-* Triggers for these anxiety disorders can stem from wide range of factors such as medical conditions, the surrounding environment and genetics. There are many different types of anxiety disorders. These include Generalized Anxiety Disorder, Social Anxiety Disorders, Panic Disorders, Separation Anxiety Disorder and Agoraphobia. There are many treatment options available for anxiety disorders including medication, behaviour therapy and psychotherapy.
+* Triggers for these anxiety disorders can stem from wide range of factors such as medical conditions, the surrounding environment and genetics. There are many different types of anxiety disorders. These include Generalized Anxiety Disorder, Social Anxiety Disorders, Panic Disorders, Separation Anxiety Disorder and Agoraphobia. There are many treatment options available for anxiety disorders including medication, behavior therapy and psychotherapy.
 
 
 ##### **Rationale**
-* The treatment of anxiety disorders is being transformed by Virtual Reality as it can simulate real-world scenarios in a controlled environment that can be immersive and therapeutic to individuals with anxiety disorders. VR exposure therapy allows individuals to be exposed to situations that can trigger their anxiety. Through consistent sessions the individual can be desensitized to these triggers which can allow traditional cognitive-behavioural therapy. The integration of Virtual Reality into therapeutic practices shows that it has the potential to positively change the treatments for anxiety disorders.
+* The treatment of anxiety disorders is being transformed by Virtual Reality as it can simulate real-world scenarios in a controlled environment that can be immerse and therapeutic to individuals with anxiety disorders. VR exposure therapy allows individuals to be exposed to situations that can trigger their anxiety. Through consistent sessions the individual can be desensitized to these triggers which can allow traditional cognitive-behavioral therapy. The integration of Virtual Reality into therapeutic practices shows that it has the potential to positively change the treatments for anxiety disorders.
 
 ##### **Hypothesis**
-* FILL THIS OUT - ZAK
+* Is traditional Cognitive Behavioral Therapy (CBT) more effective
+than Vr-Based therapy?
+  H0 : μ1 = μ2 or μ1 - μ2 = 0.
+  Ha : μ1 > μ2 or μ1 − μ2 > 0.
+
 
 ### 5 - **Method** (20M)
 ##### **Participants**
