@@ -10,8 +10,13 @@ output: html_notebook
 # Install from CRAN
 install.packages("tidyverse")
 
-read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_CONTROL.csv")
-read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_EXPERIMENTAL.csv")
+library("tidyverse")
+require("tidyverse")
+
+Control <- read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_CONTROL.csv")
+Experimental <- read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_EXPERIMENTAL.csv")
+
+View(Control)
 ### **Abstract**
 
 ##### **Aim and Rationale**
