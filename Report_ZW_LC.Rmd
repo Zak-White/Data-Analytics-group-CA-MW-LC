@@ -7,7 +7,11 @@ output: html_notebook
 ---
 
 ![Test Image](/Users/leecu/Desktop/MScY1/Data Analytics/kitkat.png)
+# Install from CRAN
+install.packages("tidyverse")
 
+read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_CONTROL.csv")
+read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_EXPERIMENTAL.csv")
 ### **Abstract**
 
 ##### **Aim and Rationale**
