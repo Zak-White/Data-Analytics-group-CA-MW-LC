@@ -16,7 +16,21 @@ require("tidyverse")
 Control <- read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_CONTROL.csv")
 Experimental <- read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_EXPERIMENTAL.csv")
 
-View(Control)
+View(Experimental)
+glimpse(Experimental)
+unique(Control$gender)
+unique(Experimental$gender)
+
+#replacing the F in the control group to female as it is a safe assumption
+Control$gender[Control$gender== "F"] <- "female"
+Control
+view(Control)
+#Replacing the "Male" with male in Experimental
+Experimental$gender[Experimental$gender== "Male"] <- "male"
+View(Experimental)
+unique(Control$gender)
+unique(Experimental$gender)
+
 ### **Abstract**
 
 ##### **Aim and Rationale**
