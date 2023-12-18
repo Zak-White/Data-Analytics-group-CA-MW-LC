@@ -6,15 +6,17 @@ output: html_notebook
 //toc: true
 ---
 
-![Test Image](/Users/leecu/Desktop/MScY1/Data Analytics/kitkat.png)
 # Install from CRAN (Installing Tidyverse)
 install.packages("tidyverse")
 
 library("tidyverse")
 require("tidyverse")
 # Cleaning the data
-Control <- read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_CONTROL.csv")
-Experimental <- read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_EXPERIMENTAL.csv")
+<!-- Control <- read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_CONTROL.csv") -->
+<!-- Experimental <- read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_EXPERIMENTAL.csv") -->
+
+Control <- read.csv("C:\Users\leecu\Desktop\MScY1\Data Analytics\Data-Analytics-group-CA-MW-LC/GROUP_2_2023_GCA_RESULTS_CONTROL.csv")
+Experimental <- read.csv("C:\Users\leecu\Desktop\MScY1\Data Analytics\Data-Analytics-group-CA-MW-LC/GROUP_2_2023_GCA_RESULTS_EXPERIMENTAL.csv")
 
 View(Experimental)
 glimpse(Experimental)
@@ -58,7 +60,77 @@ Control %>%
 Experimental %>%
   distinct()
   
-# Checking for Outliers
+# Checking for Outliers)
+* Pre-Trial GAD - Control
+boxplot(Control$pretrial_GAD)
+plot(Control$pretrial_GAD)
+* There are no outliers in the Control pretrial_GAD data set
+
+* Post-Trial GAD - Control
+boxplot(Control$posttrial_GAD)
+*One outlier in the data
+for (i in 1:ncol(Control$posttrial_GAD)) 
+{
+if (sum(boxplot.stats(Control$posttrial_GAD[[i]]$out) > 0) 
+{
+ <!-- # Calculate Lower & Upper Range  -->
+q1 <- quantile(Control$posttrial_GAD[[i]], 0.30)
+q3 <- quantile(Control$postrial_GAD[[i]], 0.75)
+iqr <- q3 - q1
+upper_limit <- q3 + 1.5 * iqr
+lower_limit <- q1 - 1.5 * iqr
+<!-- # Removes Outliers -->
+Control$posttrial_GAD <- %>%
+filter(Control$posttrial_GAD[[i]] >= lower_limit & Control$posttrial_GAD[[i]] <= upper_limit)
+}
+}
+<!-- # Reference https://www.youtube.com/watch?v=d7OYxxbcGS4 -->
+
+boxplot(Control$posttrial_GAD)
+
+* Pre-trial STAI - Control
+boxplot(Control$pretrial_STAI)
+<!-- plot(Control$pretrial_STAI) -->
+* There are no outliers in the Control pretrial_GAD data set
+
+* Post-Trial STAI - Control
+boxplot(Control$posttrial_STAI)
+* One outlier in data
+//remove outlier------------------------------------------------------------------------------------
+
+* Pre-trial GAD - Experimental
+boxplot(Experimental$pretrial_GAD)
+*There are no outliers in the Experimental pretrial_GAD data set
+
+* Post-Trial GAD - Experimental
+boxplot(Experimental$posttrial_GAD)
+*There are no outliers in the Experimental posttrial_GAD data set
+
+* Pre-trial STAI - Experimental
+boxplot(Experimental$pretrial_STAI)
+*There are no outliers in the Experimental pretrial_STAI data set
+
+* Post-Trial STAI - Experimental
+boxplot(Experimental$posttrial_STAI)
+x <- Experimental$posttrial_STAI
+
+<!-- Detect Outlier Function -->
+detect_outlier <- function(x){
+Quantile1 <- quantile(x, probs=.25)
+Quantile3 <- quantile(x, probs=.75)
+IQR = Quantile3 - Quantile1
+x > Quantile3 + (IQR * 1.5) | x < Quantile1 - (IQR * 1.5)
+}
+
+<!-- Remove Outlier Function -->
+remove_outlier <- function(Experimental, columns = names(Experimental)){
+for (col in columns) {
+Experimental <- Experimental[idetect_outlier(Experimental[[col]]), ]
+}
+print("Remove outliers")
+}
+
+<!-- Reference: https://www.geeksforgeeks.org/how-to-remove-outliers-from-multiple-columns-in-r-dataframe/ -->
 
 ### **Abstract**
 
