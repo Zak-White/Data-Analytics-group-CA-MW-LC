@@ -59,6 +59,33 @@ Experimental %>%
   distinct()
   
 # Checking for Outliers
+filter(Control, !Control$pretrial_GAD >= 0 | !Control$pretrial_GAD <= 21)
+boxplot(Control$pretrial_GAD)
+
+boxplot(Control$posttrial_GAD)
+filter(Control, !Control$posttrial_GAD >= 0 | !Control$posttrial_GAD <= 21)
+
+boxplot(Control$pretrial_STAI)
+filter(Control, !Control$pretrial_STAI >= 20 | !Control$pretrial_STAI <= 80)
+
+boxplot(Control$posttrial_STAI)
+filter(Control, !Control$posttrial_STAI >= 20 | !Control$posttrial_STAI <= 80)
+
+
+boxplot(Experimental$pretrial_GAD)
+filter(Experimental, !Experimental$pretrial_GAD >= 0 | !Experimental$pretrial_GAD <= 21)
+
+
+boxplot(Experimental$posttrial_GAD)
+filter(Experimental, !Experimental$posttrial_GAD >= 0 | !Experimental$posttrial_GAD <= 21)
+
+
+boxplot(Experimental$pretrial_STAI)
+filter(Experimental, !Experimental$pretrial_STAI >= 20 | !Experimental$pretrial_STAI <= 80)
+
+boxplot(Experimental$posttrial_STAI)
+filter(Experimental, !Experimental$posttrial_STAI >= 20 | !Experimental$posttrial_STAI <= 80)
+
 
 ### **Abstract**
 
