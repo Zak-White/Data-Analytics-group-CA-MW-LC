@@ -233,6 +233,14 @@ shapiro.test(posttrialSTAI_Experimental$posttrial_STAI)
 qplot(posttrialGAD_Control$posttrial_GAD, 
 geom = "histogram")
 qplot(posttrialSTAI_Experimental$posttrial_STAI, geom = "histogram")
+
+controlGADmean <- mean(posttrialGAD_Control$posttrial_GAD)
+
+t.test(Experimental$posttrial_GAD, mu = controlGADmean)
+
+controlSTAImean <- mean(posttrialSTAI_Control$posttrial_STAI)
+
+t.test(posttrialSTAI_Experimental$posttrial_STAI, mu = controlSTAImean)
 ##### **Magnitude and Direction of Results**
 * FILL THIS OUT - LEE
       
