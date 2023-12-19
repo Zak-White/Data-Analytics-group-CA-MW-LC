@@ -225,8 +225,14 @@ than Vr-Based therapy?
 
 
 ##### **Statistical Tests**
-* FILL THIS OUT - ZAK
-
+shapiro.test(posttrialGAD_Control$posttrial_GAD)
+shapiro.test(posttrialSTAI_Control$posttrial_STAI)
+shapiro.test(Experimental$posttrial_GAD)
+shapiro.test(posttrialSTAI_Experimental$posttrial_STAI)
+####The Hypothesis Test:
+qplot(posttrialGAD_Control$posttrial_GAD, 
+geom = "histogram")
+qplot(posttrialSTAI_Experimental$posttrial_STAI, geom = "histogram")
 ##### **Magnitude and Direction of Results**
 * FILL THIS OUT - LEE
       
