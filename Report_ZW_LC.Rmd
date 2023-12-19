@@ -221,7 +221,8 @@ than Vr-Based therapy?
 * FILL THIS OUT - ZAK
 
 ##### **Inferential Statistics**
-* FILL THIS OUT - LEE
+<!-- C_pretrial_GAD <- pretrialGAD_Control -->
+
 
 ##### **Statistical Tests**
 * FILL THIS OUT - ZAK
