@@ -61,31 +61,67 @@ Experimental %>%
 # Checking for Outliers
 filter(Control, !Control$pretrial_GAD >= 0 | !Control$pretrial_GAD <= 21)
 boxplot(Control$pretrial_GAD)
+Q1 <- quantile(Control$pretrial_GAD, .25)
+Q3 <- quantile(Control$pretrial_GAD, .75)
+IQR <- IQR(Control$pretrial_GAD)
+pretrialGAD_Control <- subset(Control, Control$pretrial_GAD> (Q1 - 1.5*IQR) & Control$pretrial_GAD< (Q3 + 1.5*IQR))
+dim(pretrialGAD_Control)
+boxplot(pretrialGAD_Control$pretrial_GAD)
 
-boxplot(Control$posttrial_GAD)
+
+
 filter(Control, !Control$posttrial_GAD >= 0 | !Control$posttrial_GAD <= 21)
+boxplot(Control$posttrial_GAD)
+Q1 <- quantile(Control$posttrial_GAD, .25)
+Q3 <- quantile(Control$posttrial_GAD, .75)
+IQR <- IQR(Control$posttrial_GAD)
+posttrialGAD_Control <- subset(Control, Control$posttrial_GAD> (Q1 - 1.5*IQR) & Control$posttrial_GAD< (Q3 + 1.5*IQR))
+dim(posttrialGAD_Control)
+boxplot(posttrialGAD_Control$posttrial_GAD)
+
+
 
 boxplot(Control$pretrial_STAI)
 filter(Control, !Control$pretrial_STAI >= 20 | !Control$pretrial_STAI <= 80)
 
-boxplot(Control$posttrial_STAI)
+
+
 filter(Control, !Control$posttrial_STAI >= 20 | !Control$posttrial_STAI <= 80)
+boxplot(Control$posttrial_STAI)
+Q1 <- quantile(Control$posttrial_STAI, .25)
+Q3 <- quantile(Control$posttrial_STAI, .75)
+IQR <- IQR(Control$posttrial_STAI)
+posttrialSTAI_Control <- subset(Control, Control$posttrial_STAI> (Q1 - 1.5*IQR) & Control$posttrial_STAI< (Q3 + 1.5*IQR))
+dim(posttrialSTAI_Control)
+boxplot(posttrialSTAI_Control$posttrial_STAI)
+
 
 
 boxplot(Experimental$pretrial_GAD)
 filter(Experimental, !Experimental$pretrial_GAD >= 0 | !Experimental$pretrial_GAD <= 21)
 
 
+
 boxplot(Experimental$posttrial_GAD)
 filter(Experimental, !Experimental$posttrial_GAD >= 0 | !Experimental$posttrial_GAD <= 21)
+
 
 
 boxplot(Experimental$pretrial_STAI)
 filter(Experimental, !Experimental$pretrial_STAI >= 20 | !Experimental$pretrial_STAI <= 80)
 
-boxplot(Experimental$posttrial_STAI)
-filter(Experimental, !Experimental$posttrial_STAI >= 20 | !Experimental$posttrial_STAI <= 80)
 
+
+filter(Experimental, !Experimental$posttrial_STAI >= 20 | !Experimental$posttrial_STAI <= 80)
+boxplot(Experimental$posttrial_STAI)
+Q1 <- quantile(Experimental$posttrial_STAI, .25)
+Q3 <- quantile(Experimental$posttrial_STAI, .75)
+IQR <- IQR(Experimental$posttrial_STAI)
+posttrialSTAI_Experimental <- subset(Experimental, Experimental$posttrial_STAI> (Q1 - 1.5*IQR) & Experimental$posttrial_STAI< (Q3 + 1.5*IQR))
+dim(posttrialSTAI_Experimental)
+boxplot(posttrialSTAI_Experimental$posttrial_STAI)
+
+<!-- REFERENCE: https://financetrain.com/remove-outliers-r -->
 
 ### **Abstract**
 
@@ -164,16 +200,21 @@ than Vr-Based therapy?
 
 ### 5 - **Method** (20M)
 ##### **Participants**
-* FILL THIS OUT - LEE
+* There was a grand total of 180 participants for this experiment. 96 were male while 84 were female. These 180 participants were all randomly sampled from a clinic's client list. All 180 participants were between the ages of 18-40 years old.
+* The participants were split into two groups:
+* The Control Group: Traditional CBT, no Virtual Reality involved, 48 males and 42 females.
+* The Experimental Group: VR-Based Therapy, 48 Males and 42 Female.
+* All the participants were undergoing treatment for Generalised Anxiety Disorder.
 
 ##### **Design**
-* FILL THIS OUT - ZAK This study would be a experimental design study. We step in and apply Vr-based therapy to one of the participant groups and not to the other hence experimental.
+* This study would be a experimental design study. We step in and apply Vr-based therapy to one of the participant groups and not to the other hence experimental.
 
 ##### **Materials**
-* FILL THIS OUT - ZAK The materials needed are the Participants, Vr Equipment and CBT method equipment. There are also some variables age, gender and GAD measurements. 
+* The materials needed are the Participants, Vr Equipment and CBT method equipment. There are also some variables age, gender and GAD measurements. 
 
 ##### **Procedure**
-* FILL THIS OUT - LEE
+* The procedure of the experiment was as follows:
+* Each group (Control and Experimental) were subjected to 12 weeks of therapy treatment with 50 minutes allocated to each session. During these sessions, the patients either went through traditional CBT or VR-Based therapy. Each patient gave a measurement (on a scale of 0-21 for GAD and 20-80 for STAI) of how severe the anxiety they experienced was. They had to self-report how they were feeling. Measurements were collected at the start and end of the experiment.
       
 ### 6 - **Results** (40M)
 ##### **Descriptive Statistics**
