@@ -241,6 +241,9 @@ t.test(Experimental$posttrial_GAD, mu = controlGADmean)
 controlSTAImean <- mean(posttrialSTAI_Control$posttrial_STAI)
 
 t.test(posttrialSTAI_Experimental$posttrial_STAI, mu = controlSTAImean)
+<!-- Reference: https://data-flair.training/blogs/hypothesis-testing-in-r/
+     https://www.youtube.com/watch?v=oNpfjcIf2Es 
+     https://www.statology.org/r-mean-of-column/ -->
 ##### **Magnitude and Direction of Results**
 * FILL THIS OUT - LEE
       
