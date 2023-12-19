@@ -11,7 +11,6 @@ install.packages("tidyverse")
 
 library("tidyverse")
 require("tidyverse")
-
 # Cleaning the data
 <!-- Control <- read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_CONTROL.csv") -->
 <!-- Experimental <- read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_EXPERIMENTAL.csv") -->
@@ -63,18 +62,31 @@ Experimental %>%
   
 # Checking for Outliers)
 * Pre-Trial GAD - Control
-<!-- ggbetweenstats(Control$pretrial_GAD, outlier.tagging = TRUE) -->
 boxplot(Control$pretrial_GAD)
-* There is 1 outliers in the Control pretrial_GAD data set ---------------------
-filter(Control, Control$pretrial_GAD >= 0 & Control$pretrial_GAD <= 21)
-boxplot(Control$pretrial_GAD)
-
+plot(Control$pretrial_GAD)
+* There are no outliers in the Control pretrial_GAD data set
 
 * Post-Trial GAD - Control
 boxplot(Control$posttrial_GAD)
-*1 outlier in the data ---------------------------------------------------------
-filter(Control, Control$pretrial_GAD >= 0 & Control$posttrial_GAD <= 21)
+*One outlier in the data
+for (i in 1:ncol(Control$posttrial_GAD)) 
+{
+if (sum(boxplot.stats(Control$posttrial_GAD[[i]]$out) > 0) 
+{
+ <!-- # Calculate Lower & Upper Range  -->
+q1 <- quantile(Control$posttrial_GAD[[i]], 0.30)
+q3 <- quantile(Control$postrial_GAD[[i]], 0.75)
+iqr <- q3 - q1
+upper_limit <- q3 + 1.5 * iqr
+lower_limit <- q1 - 1.5 * iqr
+<!-- # Removes Outliers -->
+Control$posttrial_GAD <- %>%
+filter(Control$posttrial_GAD[[i]] >= lower_limit & Control$posttrial_GAD[[i]] <= upper_limit)
+}
+}
+<!-- # Reference https://www.youtube.com/watch?v=d7OYxxbcGS4 -->
 
+boxplot(Control$posttrial_GAD)
 
 * Pre-trial STAI - Control
 boxplot(Control$pretrial_STAI)
@@ -83,8 +95,8 @@ boxplot(Control$pretrial_STAI)
 
 * Post-Trial STAI - Control
 boxplot(Control$posttrial_STAI)
-* One outlier in data ----------------------------------------------------------
-filter(Control, Control$posttrial_STAI >= 20 & Control$posttrial_STAI <= 80)
+* One outlier in data
+//remove outlier------------------------------------------------------------------------------------
 
 * Pre-trial GAD - Experimental
 boxplot(Experimental$pretrial_GAD)
@@ -100,9 +112,23 @@ boxplot(Experimental$pretrial_STAI)
 
 * Post-Trial STAI - Experimental
 boxplot(Experimental$posttrial_STAI)
-1 Outlier in  the data ---------------------------------------------------------
-filter(Experimental, Experimental$posttrial_STAI >= 20 & Experimental$posttrial_STAI <= 80)
+x <- Experimental$posttrial_STAI
 
+<!-- Detect Outlier Function -->
+detect_outlier <- function(x){
+Quantile1 <- quantile(x, probs=.25)
+Quantile3 <- quantile(x, probs=.75)
+IQR = Quantile3 - Quantile1
+x > Quantile3 + (IQR * 1.5) | x < Quantile1 - (IQR * 1.5)
+}
+
+<!-- Remove Outlier Function -->
+remove_outlier <- function(Experimental, columns = names(Experimental)){
+for (col in columns) {
+Experimental <- Experimental[idetect_outlier(Experimental[[col]]), ]
+}
+print("Remove outliers")
+}
 
 <!-- Reference: https://www.geeksforgeeks.org/how-to-remove-outliers-from-multiple-columns-in-r-dataframe/ -->
 
@@ -183,21 +209,16 @@ than Vr-Based therapy?
 
 ### 5 - **Method** (20M)
 ##### **Participants**
-*There was a grand total of 180 participants for this experiment. 96 were male while 84 were female. These 180 participants were all randomly sampled from a clinic's client list. All 180 participants were between the ages of 18 - 40 years old. The participants were split into two groups:
-* The Control Group: Traditional CBT, no Virtual Reality involved, 48 Males and 42 Females
-* The Experimental Group: VR-Based Therapy, 48 Males and 42 Females.
-All the participants were undergoing treatment for Generalised Anxiety Disorder.
+* FILL THIS OUT - LEE
 
 ##### **Design**
-This study would be a experimental design study. We step in and apply Vr-based therapy to one of the participant groups and not to the other hence experimental.
+* FILL THIS OUT - ZAK This study would be a experimental design study. We step in and apply Vr-based therapy to one of the participant groups and not to the other hence experimental.
 
 ##### **Materials**
-The materials needed are the Participants, Vr Equipment and CBT method equipment. There are also some variables age, gender and GAD measurements. 
+* FILL THIS OUT - ZAK The materials needed are the Participants, Vr Equipment and CBT method equipment. There are also some variables age, gender and GAD measurements. 
 
 ##### **Procedure**
-* The procedure of the experiment was as follows:
-* Each group (Control and Experimental) were subjected to 12 weeks of therapy treatment with 50 minutes allocated to each session. During these sessions, the patients either went through traditional CBT or VR-Based therapy.
-* Each patient gave a measurement (on a scale of 0-21 for GAD and 20-80 for STAI) of how severe the anxiety they experienced was. They had to self-report how they were feeling. Measurements were collected at the start and end of the experiemnt.
+* FILL THIS OUT - LEE
       
 ### 6 - **Results** (40M)
 ##### **Descriptive Statistics**
