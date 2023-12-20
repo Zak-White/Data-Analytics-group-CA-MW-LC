@@ -1,9 +1,9 @@
 ---
-# title: "2023_DAIE_GCA_ZW_LC"
-# author: "Mark (Zak) White & Lee Cunningham"
-# date: "19th November, 2023"
-# output: html_notebook
-# //toc: true
+ title: "2023_DAIE_GCA_ZW_LC"
+ author: "Mark (Zak) White & Lee Cunningham"
+ date: "19th November, 2023"
+ output: html_notebook
+ //toc: true
 ---
 ### **Abstract**
 
@@ -192,35 +192,45 @@ view(clean_Experimental)
 #In this study, the participants were asked to self-report the severity of the anxiety they were feeling. The measurements used were the 'State-Trait Anxiety Inventory' and 'Generalised Anxiety Disorder 7 Item Scale'. Both use a range of 0 - 10.
 
 ##### **Findings/ Implications**
+```{r}
 CptGAD <- clean_Control$pretrial_GAD
 CpstGAD <- clean_Control$posttrial_GAD
 hist(CpstGAD, col='red', xlim=c(0,21), main='Control GAD pre/post', xlab='GAD scores')
 hist(CptGAD, col='blue', add=TRUE)
 legend('topright', c('Post GAD', 'Pre GAD'), fill=c('red', 'blue'))
+```
+![ControlGAD](/Users/leecu/Desktop/MScY1/Data Analytics/Data-Analytics-group-CA-MW-LC/controlGAD.png)
 #### Above is all of the Control pre/post data for GAD
-
+```{r}
 CptSTAI <- clean_Control$pretrial_STAI
 CpstSTAI <- clean_Control$posttrial_STAI
 hist(CpstSTAI, col='green', xlim=c(20,80), main='Control STAI pre/post', xlab='STAI scores')
 hist(CptSTAI, col='yellow', add=TRUE)
 legend('topright', c('Post STAI', 'Pre STAI'), fill=c('green', 'yellow'))
+```
+![ControlGAD](/Users/leecu/Desktop/MScY1/Data Analytics/Data-Analytics-group-CA-MW-LC/controlstai.png)
+
 #### Above is all of the Control pre/post data for STAI
 #### In the control group:
 #### For GAD, the participants were feeling on average less anxious after undergoing the traditional CBT testing than when the original readings were noted.
 #### For STAI, the participants were feeling on average more anxious after undergoing the traditional CBT testing than when the original readings were noted.
-
+```{r}
 EptGAD <- clean_Experimental$pretrial_GAD
 EpstGAD <- clean_Experimental$posttrial_GAD
 hist(EpstGAD, col='orange', xlim=c(0,21), main='Experimental GAD pre/post', xlab='GAD scores')
 hist(EptGAD, col='purple', add=TRUE)
 legend('topright', c('Post GAD', 'Pre GAD'), fill=c('orange', 'purple'))
+```
+![ControlGAD](/Users/leecu/Desktop/MScY1/Data Analytics/Data-Analytics-group-CA-MW-LC/experimentalgad.png)
 #### Above is all of the Experimental pre/post data for GAD
-
+```{r}
 EptSTAI <- clean_Experimental$pretrial_STAI
 EpstSTAI <- clean_Experimental$posttrial_STAI
 hist(EpstSTAI, col='grey', xlim=c(20,80), main='Experimental STAI pre/post', xlab='STAI scores')
 hist(EptSTAI, col='navy', add=TRUE)
 legend('topright', c('Post STAI', 'Pre STAI'), fill=c('grey', 'navy'))
+```
+![ControlGAD](/Users/leecu/Desktop/MScY1/Data Analytics/Data-Analytics-group-CA-MW-LC/experimentalstai.png)
 #### Above is all of the Experimental pre/post data for STAI
 #### In the Experimental group:
 #### For GAD, the participants were feeling on average less anxious after undergoing the VR-Based therapy testing than when the original data was noted. It is the same result for STAI testing too, showing the positive impact that VR-Based therapy can have on the treatment landscape.
