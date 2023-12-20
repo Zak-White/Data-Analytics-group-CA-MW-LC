@@ -43,11 +43,11 @@
 ## ---------------------------------------------------------------------------------------------
 
 #### Installing Packages
-install.packages("tidyverse")
+#install.packages("tidyverse")
 library("tidyverse")
 require("tidyverse")
 
-install.packages("knitr")
+#install.packages("knitr")
 library("knitr")
 require("knitr")
 
@@ -179,17 +179,17 @@ view(clean_Experimental)
 
 ### **Abstract** (2.5M)
 ##### **Aim and Rationale**
-* The aim of the experiment was to find whether the use of VR-based therapy would have a positive effect on patients who are undergoing treatment for Generalized Anxiety Disorder (GAD). Virtual Reality offers immersive experiences that have the ability to simulate real-world scenarios in a controlled environment. VR allows for desensitization to certain scenarios by exposing patients to situations that can trigger anxiety. 
-Post-Traumatic Stress Disorder, Acrophobia and Social Anxiety Disorders can be treated through the use of VR exposure therapy (VRET). The integration of VR into therapy practices, showcases the potential it has to make positive changes to treatments for anxiety disorder.
+#The aim of the experiment was to find whether the use of VR-based therapy would have a positive effect on patients who are undergoing treatment for Generalized Anxiety Disorder (GAD). Virtual Reality offers immersive experiences that have the ability to simulate real-world scenarios in a controlled environment. VR allows for desensitization to certain scenarios by exposing patients to situations that can trigger anxiety. 
+#Post-Traumatic Stress Disorder, Acrophobia and Social Anxiety Disorders can be treated through the use of VR exposure therapy (VRET). The integration of VR into therapy practices, showcases the potential it has to make positive changes to treatments for anxiety disorder.
             
 ##### **Participants and Setting**
-* There was **180** participants in total for this study. They were **randomly sampled** from the clinic's client list. **96 were Male** and **84 were Female**. They were randomly assigned into the two groups. **Control (Traditional CBT, no VR) (M = 48, F = 42)** **Experimental (VR-Based Therapy) (M = 48, F = 42)** All participants were between the ago of **18-40** years old.
+#There was **180** participants in total for this study. They were **randomly sampled** from the clinic's client list. **96 were Male** and **84 were Female**. They were randomly assigned into the two groups. **Control (Traditional CBT, no VR) (M = 48, F = 42)** **Experimental (VR-Based Therapy) (M = 48, F = 42)** All participants were between the ago of **18-40** years old.
 
 ##### **Experiment Design**
-* The two groups proceeded to go to 12 weeks of treatment with a therapist in 50 minute sessions. During the treatment sessions, the patients either experienced the traditional CBT or underwent the VR-Based therapy.
+#The two groups proceeded to go to 12 weeks of treatment with a therapist in 50 minute sessions. During the treatment sessions, the patients either experienced the traditional CBT or underwent the VR-Based therapy.
 
 ##### **Results Gathering**
-* In this study, the participants were asked to self-report the severity of the anxiety they were feeling. The measurements used were the 'State-Trait Anxiety Inventory' and 'Generalised Anxiety Disorder 7 Item Scale'. Both use a range of 0 - 10.
+#In this study, the participants were asked to self-report the severity of the anxiety they were feeling. The measurements used were the 'State-Trait Anxiety Inventory' and 'Generalised Anxiety Disorder 7 Item Scale'. Both use a range of 0 - 10.
 
 ##### **Findings/ Implications**
 CptGAD <- clean_Control$pretrial_GAD
@@ -228,40 +228,40 @@ legend('topright', c('Post STAI', 'Pre STAI'), fill=c('grey', 'navy'))
 
 ### 4 - **Introduction** (15M)
 ##### **Topic and Context**
-* The amount of people who suffer from anxiety disorders worldwide is approximately 301 million, World Health Organisation, 2019. Anxiety disorders are mental disorders which can include a variety of feelings such as anxiety and fear. These feelings can cause individuals to experience a 'racing heart' and/ or 'shaky limbs'. Typically, anxiety is a response to stress but individuals who suffer from anxiety disorders tend to feel these unwanted emotions all the time. This can seriously affect their performance in physical activities, work, school or friendships.
-Triggers for these anxiety disorders can stem from wide range of factors such as medical conditions, the surrounding environment and genetics. There are many different types of anxiety disorders. These include Generalized Anxiety Disorder, Social Anxiety Disorders, Panic Disorders, Separation Anxiety Disorder and Agoraphobia. There are many treatment options available for anxiety disorders including medication, behavior therapy and psychotherapy.
+#The amount of people who suffer from anxiety disorders worldwide is approximately 301 million, World Health Organisation, 2019. Anxiety disorders are mental disorders which can include a variety of feelings such as anxiety and fear. These feelings can cause individuals to experience a 'racing heart' and/ or 'shaky limbs'. Typically, anxiety is a response to stress but individuals who suffer from anxiety disorders tend to feel these unwanted emotions all the time. This can seriously affect their performance in physical activities, work, school or friendships.
+#Triggers for these anxiety disorders can stem from wide range of factors such as medical conditions, the surrounding environment and genetics. There are many different types of anxiety disorders. These include Generalized Anxiety Disorder, Social Anxiety Disorders, Panic Disorders, Separation Anxiety Disorder and Agoraphobia. There are many treatment options available for anxiety disorders including medication, behavior therapy and psychotherapy.
 
 
 ##### **Rationale**
-* The treatment of anxiety disorders is being transformed by Virtual Reality as it can simulate real-world scenarios in a controlled environment that can be immerse and therapeutic to individuals with anxiety disorders. VR exposure therapy allows individuals to be exposed to situations that can trigger their anxiety. Through consistent sessions the individual can be desensitized to these triggers which can allow traditional cognitive-behavioral therapy. The integration of Virtual Reality into therapeutic practices shows that it has the potential to positively change the treatments for anxiety disorders.
+#The treatment of anxiety disorders is being transformed by Virtual Reality as it can simulate real-world scenarios in a controlled environment that can be immerse and therapeutic to individuals with anxiety disorders. VR exposure therapy allows individuals to be exposed to situations that can trigger their anxiety. Through consistent sessions the individual can be desensitized to these triggers which can allow traditional cognitive-behavioral therapy. The integration of Virtual Reality into therapeutic practices shows that it has the potential to positively change the treatments for anxiety disorders.
 
 ##### **Hypothesis**
-* Is traditional Cognitive Behavioral Therapy (CBT) more effective than Vr-Based therapy?
-  H0 : μ1 = μ2 or μ1 - μ2 = 0.
-  Ha : μ1 > μ2 or μ1 − μ2 > 0.
+#Is traditional Cognitive Behavioral Therapy (CBT) more effective than Vr-Based therapy?
+#  H0 : μ1 = μ2 | μ1 - μ2 = 0.
+#  Ha : μ1 > μ2 | μ1 − μ2 > 0.
 
 
 ### 5 - **Method** (20M)
 ##### **Participants**
-* There was a grand total of 180 participants for this experiment. 96 were male while 84 were female. These 180 participants were all randomly sampled from a clinic's client list. All 180 participants were between the ages of 18-40 years old.
-The participants were split into two groups:
-The Control Group: Traditional CBT, no Virtual Reality involved, 48 males and 42 females.
-The Experimental Group: VR-Based Therapy, 48 Males and 42 Female.
-All the participants were undergoing treatment for Generalised Anxiety Disorder.
+#There was a grand total of 180 participants for this experiment. 96 were male while 84 were female. These 180 participants were all randomly sampled from a clinic's client list. All 180 participants were between the ages of 18-40 years old.
+#The participants were split into two groups:
+#The Control Group: Traditional CBT, no Virtual Reality involved, 48 males and 42 females.
+#The Experimental Group: VR-Based Therapy, 48 Males and 42 Female.
+#All the participants were undergoing treatment for Generalised Anxiety Disorder.
 
 ##### **Design**
-* This study would be a experimental design study. We step in and apply Vr-based therapy to one of the participant groups and not to the other hence experimental.
+#This study would be a experimental design study. We step in and apply Vr-based therapy to one of the participant groups and not to the other hence experimental.
 
 ##### **Materials**
-* The materials needed are the Participants, Vr Equipment and CBT method equipment. There are also some variables age, gender and GAD measurements. 
+#The materials needed are the Participants, Vr Equipment and CBT method equipment. There are also some variables age, gender and GAD measurements. 
 
 ##### **Procedure**
-* The procedure of the experiment was as follows:
-Each group (Control and Experimental) were subjected to 12 weeks of therapy treatment with 50 minutes allocated to each session. During these sessions, the patients either went through traditional CBT or VR-Based therapy. Each patient gave a measurement (on a scale of 0-21 for GAD and 20-80 for STAI) of how severe the anxiety they experienced was. They had to self-report how they were feeling. Measurements were collected at the start and end of the experiment.
+#The procedure of the experiment was as follows:
+#Each group (Control and Experimental) were subjected to 12 weeks of therapy treatment with 50 minutes allocated to each session. During these sessions, the patients either went through traditional CBT or VR-Based therapy. Each patient gave a measurement (on a scale of 0-21 for GAD and 20-80 for STAI) of how severe the anxiety they experienced was. They had to self-report how they were feeling. Measurements were collected at the start and end of the experiment.
       
 ### 6 - **Results** (40M)
 ##### **Descriptive Statistics**
-*Some basic descriptive statistics from this list https://statsandr.com/blog/descriptive-statistics-in-r/
+#Some basic descriptive statistics from this list https://statsandr.com/blog/descriptive-statistics-in-r/
 
 min(clean_Control$pretrial_GAD)
 max(clean_Control$pretrial_GAD)
