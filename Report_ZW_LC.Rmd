@@ -1,18 +1,57 @@
 ---
-title: "2023_DAIE_GCA_ZW_LC"
-author: "Mark (Zak) White & Lee Cunningham"
-date: "19th November, 2018"
-output: html_notebook
-//toc: true
+# title: "2023_DAIE_GCA_ZW_LC"
+# author: "Mark (Zak) White & Lee Cunningham"
+# date: "19th November, 2023"
+# output: html_notebook
+# //toc: true
 ---
+### **Abstract**
 
-![Test Image](/Users/leecu/Desktop/MScY1/Data Analytics/kitkat.png)
-# Install from CRAN (Installing Tidyverse)
+##### **Aim and Rationale**
+##### **Participants and Setting**
+##### **Experiment Design**
+##### **Results Gathering**
+##### **Findings/ Implications**
+
+### **Introduction**
+
+##### **Topic and Context**
+##### **Rationale**
+##### **Hypothesis**
+
+### **Method**
+
+##### **Participants**
+##### **Design**
+##### **Materials**
+##### **Procedure**
+
+### **Results**
+
+##### **Descriptive Statistics**
+##### **Inferential Statistics**
+##### **Statistical Tests**
+##### **Magnitude and Direction of Results**
+
+### **Discussion**
+
+##### **Outline Findings and Relation To The Hypothesis**
+##### **Limitations (if confounding variables are clearly identified by your group)**
+
+### **References**
+
+## ---------------------------------------------------------------------------------------------
+
+#### Installing Packages
 install.packages("tidyverse")
-
 library("tidyverse")
 require("tidyverse")
-# Cleaning the data
+
+install.packages("knitr")
+library("knitr")
+require("knitr")
+
+#### Cleaning the data
 Control <- read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_CONTROL.csv")
 Experimental <- read.csv("D:\\Games Dev\\Data-Analytics-group-CA-MW-LC\\GROUP_2_2023_GCA_RESULTS_EXPERIMENTAL.csv")
 
@@ -21,23 +60,23 @@ glimpse(Experimental)
 unique(Control$gender)
 unique(Experimental$gender)
 
-#replacing the F in the control group to female as it is a safe assumption
+#### replacing the F in the control group to female as it is a safe assumption
 Control$gender[Control$gender== "F"] <- "female"
 Control
 view(Control)
-#Replacing the "Male" with male in Experimental
+#### Replacing the "Male" with male in Experimental
 Experimental$gender[Experimental$gender== "Male"] <- "male"
 View(Experimental)
 unique(Control$gender)
 unique(Experimental$gender)
 
-#getting some mean data from variables
+#### getting some mean data from variables
 mean(Control$pretrial_GAD)
 mean(Experimental$pretrial_GAD)
 mean(Control$posttrial_GAD)
 mean(Experimental$posttrial_GAD)
 
-##searching for incomplete data Reference https://www.youtube.com/watch?v=sV5lwAJ7vnQ 17:05
+#### searching for incomplete data Reference https://www.youtube.com/watch?v=sV5lwAJ7vnQ 17:05
 Control %>%
   select(patientID, gender, pretrial_GAD, pretrial_STAI, posttrial_GAD, posttrial_STAI) %>%
   filter(!complete.cases(.))
@@ -47,18 +86,18 @@ Experimental %>%
   filter(!complete.cases(.))
 
 
-#This is the R way of finding duplicates
+#### This is the R way of finding duplicates
 Control[duplicated(Control), ]
 Experimental[duplicated(Experimental), ]
 
-#This is the tidyverse way of finding distinct entries Reference: https://www.youtube.com/watch?v=sV5lwAJ7vnQ 25:00
+#### This is the tidyverse way of finding distinct entries Reference: https://www.youtube.com/watch?v=sV5lwAJ7vnQ 25:00
 Control %>%
   distinct()
 
 Experimental %>%
   distinct()
   
-# Checking for Outliers
+#### Checking for Outliers
 filter(Control, !Control$pretrial_GAD >= 0 | !Control$pretrial_GAD <= 21)
 boxplot(Control$pretrial_GAD)
 Q1 <- quantile(Control$pretrial_GAD, .25)
@@ -121,9 +160,9 @@ posttrialSTAI_Experimental <- subset(Experimental, Experimental$posttrial_STAI> 
 dim(posttrialSTAI_Experimental)
 boxplot(posttrialSTAI_Experimental$posttrial_STAI)
 
-#REFERENCE: https://financetrain.com/remove-outliers-r 
+#### REFERENCE: https://financetrain.com/remove-outliers-r 
 
-### Merging New DataSets Into Base Dataset
+#### Merging New DataSets Into Base Dataset
 
 
 nControl <- merge(Control, pretrialGAD_Control, keep=pretrial_GAD, obs=90)
@@ -134,42 +173,9 @@ view(clean_Control)
 clean_Experimental <- merge(Experimental, posttrialSTAI_Experimental, keep=posttrial_STAI, obs=90)
 view(clean_Experimental)
 
-### **Abstract**
+#### Reference https://www.youtube.com/watch?v=5NKiV5NEEx8
 
-##### **Aim and Rationale**
-##### **Participants and Setting**
-##### **Experiment Design**
-##### **Results Gathering**
-##### **Findings/ Implications**
 
-### **Introduction**
-
-##### **Topic and Context**
-##### **Rationale**
-##### **Hypothesis**
-
-### **Method**
-
-##### **Participants**
-##### **Design**
-##### **Materials**
-##### **Procedure**
-
-### **Results**
-
-##### **Descriptive Statistics**
-##### **Inferential Statistics**
-##### **Statistical Tests**
-##### **Magnitude and Direction of Results**
-
-### **Discussion**
-
-##### **Outline Findings and Relation To The Hypothesis**
-##### **Limitations (if confounding variables are clearly identified by your group)**
-
-### **References**
-
-## ---------------------------------------------------------------------------------------------
 
 ### **Abstract** (2.5M)
 ##### **Aim and Rationale**
@@ -186,7 +192,39 @@ Post-Traumatic Stress Disorder, Acrophobia and Social Anxiety Disorders can be t
 * In this study, the participants were asked to self-report the severity of the anxiety they were feeling. The measurements used were the 'State-Trait Anxiety Inventory' and 'Generalised Anxiety Disorder 7 Item Scale'. Both use a range of 0 - 10.
 
 ##### **Findings/ Implications**
-* FILL THIS OUT - LEE
+CptGAD <- clean_Control$pretrial_GAD
+CpstGAD <- clean_Control$posttrial_GAD
+hist(CpstGAD, col='red', xlim=c(0,21), main='Control GAD pre/post', xlab='GAD scores')
+hist(CptGAD, col='blue', add=TRUE)
+legend('topright', c('Post GAD', 'Pre GAD'), fill=c('red', 'blue'))
+#### Above is all of the Control pre/post data for GAD
+
+CptSTAI <- clean_Control$pretrial_STAI
+CpstSTAI <- clean_Control$posttrial_STAI
+hist(CpstSTAI, col='green', xlim=c(20,80), main='Control STAI pre/post', xlab='STAI scores')
+hist(CptSTAI, col='yellow', add=TRUE)
+legend('topright', c('Post STAI', 'Pre STAI'), fill=c('green', 'yellow'))
+#### Above is all of the Control pre/post data for STAI
+#### In the control group:
+#### For GAD, the participants were feeling on average less anxious after undergoing the traditional CBT testing than when the original readings were noted.
+#### For STAI, the participants were feeling on average more anxious after undergoing the traditional CBT testing than when the original readings were noted.
+
+EptGAD <- clean_Experimental$pretrial_GAD
+EpstGAD <- clean_Experimental$posttrial_GAD
+hist(EpstGAD, col='orange', xlim=c(0,21), main='Experimental GAD pre/post', xlab='GAD scores')
+hist(EptGAD, col='purple', add=TRUE)
+legend('topright', c('Post GAD', 'Pre GAD'), fill=c('orange', 'purple'))
+#### Above is all of the Experimental pre/post data for GAD
+
+EptSTAI <- clean_Experimental$pretrial_STAI
+EpstSTAI <- clean_Experimental$posttrial_STAI
+hist(EpstSTAI, col='grey', xlim=c(20,80), main='Experimental STAI pre/post', xlab='STAI scores')
+hist(EptSTAI, col='navy', add=TRUE)
+legend('topright', c('Post STAI', 'Pre STAI'), fill=c('grey', 'navy'))
+#### Above is all of the Experimental pre/post data for STAI
+#### In the Experimental group:
+#### For GAD, the participants were feeling on average less anxious after undergoing the VR-Based therapy testing than when the original data was noted. It is the same result for STAI testing too, showing the positive impact that VR-Based therapy can have on the treatment landscape.
+
 
 ### 4 - **Introduction** (15M)
 ##### **Topic and Context**
@@ -268,57 +306,58 @@ cleanEPreTrail_STAIrng
 cleanEPostTrail_STAIrng <- range(clean_Experimental$posttrial_STAI)
 cleanEPostTrail_STAIrng
 
-#The functions above could get the min and max in many ways
-#I will now show how to get the range with a small portion of the data 
+#### The functions above could get the min and max in many ways
+#### I will now show how to get the range with a small portion of the data 
 max(clean_Control$pretrial_GAD) - min(clean_Control$pretrial_GAD)
 
 max(clean_Experimental$posttrial_STAI) - min(clean_Experimental$posttrial_STAI) 
 
-#Now to get the the mean for some of this data
+#### Now to get the the mean for some of this data
 mean(clean_Control$posttrial_GAD)
 mean(clean_Experimental$pretrial_STAI)
 
-#Now to get the the median for some of this data
+#### Now to get the the median for some of this data
 median(clean_Control$pretrial_GAD)
 median(clean_Experimental$pretrial_GAD)
 
-#Now to get the first and third quantile of the data I will be using pretrial_GAD for these examples going further
+#### Now to get the first and third quantile of the data I will be using pretrial_GAD for these examples going further
 quantile(clean_Control$pretrial_GAD,0.25)
 quantile(clean_Experimental$pretrial_GAD,0.25)
 
 quantile(clean_Control$pretrial_GAD,0.75)
 quantile(clean_Experimental$pretrial_GAD,0.75)
 
-#Now I will get the IQR (InterQuartile Range)
+#### Now I will get the IQR (InterQuartile Range)
 
 IQR(clean_Control$pretrial_GAD)
 IQR(clean_Experimental$pretrial_GAD)
 
-#Now I will be getting the standard deviation
+#### Now I will be getting the standard deviation
 
 sd(clean_Control$pretrial_GAD)
 sd(clean_Experimental$pretrial_GAD)
 
-#Finding the Mode is more complicated as there is nor direct function 
+#### Finding the Mode is more complicated as there is nor direct function 
 
 modeControl <- table(clean_Control$pretrial_GAD)
 modeExperimental <- table(clean_Experimental$pretrial_GAD)
 
 sort(modeControl, decreasing = TRUE)
-#the mode is 15
+#### the mode is 15
 sort(modeExperimental, decreasing = TRUE) 
-#the mode is 16
+#### the mode is 16
 
 
 
 ##### **Inferential Statistics**
+
 CPostGAD <- clean_Control$posttrial_GAD
 sampCPostGAD <- sample(CPostGAD, 20)
 hist(sampCPostGAD,
 main = "Histogram of Control Post-Trial GAD Scores",
 xlab = "Post-Trial GAD Scores",
 )
-##Above is: Random Sample of 20 from patients in the control group after undergoing treatment for GAD -->
+#### Above is: Random Sample of 20 from patients in the control group after undergoing treatment for GAD
 
 CPreGAD <- clean_Control$pretrial_GAD
 sampCPreGAD <- sample(CPreGAD, 20)
@@ -326,7 +365,12 @@ hist(sampCPreGAD,
 main = "Histogram of Control Pre-Trial GAD Scores",
 xlab = "Pre-Trial GAD Scores",
 )
-#Above is: Random Sample of 20 from patients in the control group before undergoing treatment for GAD -->
+#### Above is: Random Sample of 20 from patients in the control group before undergoing treatment for GAD
+hist(sampCPostGAD, col='red', xlim=c(0,21), main='Control GAD Pre/Post', xlab='GAD Scores')
+hist(sampCPreGAD, col='blue', add=TRUE)
+legend('topright', c('Post GAD', 'Pre GAD'), fill=c('red', 'blue'))
+
+
 
 CPostSTAI <- clean_Control$posttrial_STAI
 sampCPostSTAI <- sample(CPostSTAI, 20)
@@ -334,7 +378,7 @@ hist(sampCPostSTAI,
 main = "Histogram of Control Post-Trial STAI Scores",
 xlab = "Post-Trial STAI Scores",
 )
-#Above is: Random Sample of 20 from patients in the control group after undergoing treatment for STAI -->
+#### Above is: Random Sample of 20 from patients in the control group after undergoing treatment for STAI 
 
 CPreSTAI <- clean_Control$pretrial_STAI
 sampCPreSTAI <- sample(CPreSTAI, 20)
@@ -342,7 +386,11 @@ hist(sampCPreSTAI,
 main = "Histogram of Control Pre-Trial STAI Scores",
 xlab = "Pre-Trial STAI Scores",
 )
-#Above is: Random Sample of 20 from patients in the control group before undergoing treatment for STAI -->
+#### Above is: Random Sample of 20 from patients in the control group before undergoing treatment for STAI
+hist(sampCPostSTAI, col='green', xlim=c(20,80), main='Control STAI Pre/Post', xlab='STAI Scores')
+hist(sampCPreSTAI, col='purple', add=TRUE)
+legend('topright', c('Post STAI', 'Pre STAI'), fill=c('green', 'purple'))
+
 
 EPostGAD <- clean_Experimental$posttrial_GAD
 sampEPostGAD <- sample(EPostGAD, 20)
@@ -350,7 +398,7 @@ hist(sampEPostGAD,
 main = "Histogram of Experimental Post-Trial GAD Scores",
 xlab = "Post-Trial GAD Scores",
 )
-#Above is: Random Sample of 20 from patients in the Experimental group after undergoing treatment for GAD -->
+#### Above is: Random Sample of 20 from patients in the Experimental group after undergoing treatment for GAD 
 
 EPreGAD <- clean_Experimental$pretrial_GAD
 sampEPreGAD <- sample(EPreGAD, 20)
@@ -358,7 +406,11 @@ hist(sampEPreGAD,
 main = "Histogram of Experiemtnal Pre-Trial GAD Scores",
 xlab = "Pre-Trial GAD Scores",
 )
-#Above is: Random Sample of 20 from patients in the Experimental group before undergoing treatment for GAD -->
+#### Above is: Random Sample of 20 from patients in the Experimental group before undergoing treatment for GAD 
+hist(sampEPostGAD, col='yellow', xlim=c(0,21), main='Experimental GAD Pre/Post', xlab='GAD Scores')
+hist(sampEPreGAD, col='Orange', add=TRUE)
+legend('topright', c('Post GAD', 'Pre GAD'), fill=c('yellow', 'orange'))
+
 
 EPostSTAI <- clean_Experimental$posttrial_STAI
 sampEPostSTAI <- sample(EPostSTAI, 20)
@@ -366,7 +418,7 @@ hist(sampEPostSTAI,
 main = "Histogram of Experiemtnal Post-Trial STAI Scores",
 xlab = "Post-Trial STAI Scores",
 )
-#Above is: Random Sample of 20 from patients in the Experimental group after undergoing treatment for STAI -->
+#### Above is: Random Sample of 20 from patients in the Experimental group after undergoing treatment for STAI 
 
 EPreSTAI <- clean_Experimental$pretrial_STAI
 sampEPreSTAI <- sample(EPreSTAI, 20)
@@ -374,15 +426,20 @@ hist(sampEPreSTAI,
 main = "Histogram of Experiemtnal Pre-Trial STAI Scores",
 xlab = "Pre-Trial STAI Scores",
 )
-#Above is: Random Sample of 20 from patients in the Experimental group before undergoing treatment for STAI -->
-#REFERENCE: https://bookdown.org/mrenna/statbook/statistical-inference.html -->
+#### Above is: Random Sample of 20 from patients in the Experimental group before undergoing treatment for STAI 
+hist(sampEPostSTAI, col='blue', xlim=c(20,80), main='Control STAI Pre/Post', xlab='STAI Scores')
+hist(sampEPreSTAI, col='grey', add=TRUE)
+legend('topright', c('Post STAI', 'Pre STAI'), fill=c('blue', 'grey'))
+
+
+#### REFERENCE: https://bookdown.org/mrenna/statbook/statistical-inference.html
 
 ##### **Statistical Tests**
 shapiro.test(clean_Control$posttrial_GAD)
 shapiro.test(clean_Control$posttrial_STAI)
 shapiro.test(clean_Experimental$posttrial_GAD)
 shapiro.test(clean_Experimental$posttrial_STAI)
-####The Hypothesis Test:
+#### The Hypothesis Test:
 qplot(clean_Control$posttrial_GAD, 
 geom = "histogram")
 qplot(clean_Experimental$posttrial_STAI, geom = "histogram")
@@ -394,21 +451,74 @@ t.test(clean_Experimental$posttrial_GAD, mu = controlGADmean)
 controlSTAImean <- mean(clean_Control$posttrial_STAI)
 
 t.test(clean_Experimental$posttrial_STAI, mu = controlSTAImean)
-#Reference: https://data-flair.training/blogs/hypothesis-testing-in-r/ https://www.youtube.com/watch?v=oNpfjcIf2Es           https://www.statology.org/r-mean-of-column/ -->
+#### Reference: https://data-flair.training/blogs/hypothesis-testing-in-r/ https://www.youtube.com/watch?v=oNpfjcIf2Es           https://www.statology.org/r-mean-of-column/ -->
      
-# It appears as though the data points to the hyothesis being accepted
+#### It appears as though the data points to the hyothesis being accepted
+
 ##### **Magnitude and Direction of Results**
-* FILL THIS OUT - LEE
+cprtGAD2 <- clean_Control$pretrial_GAD
+cpsttGAD2 <- clean_Control$posttrial_GAD
+plot(cprtGAD2, cpsttGAD2, main = "Control Pre/Post GAD",
+xlab = "Pre GAD Score", ylab = "Post GAD Score",
+pch = 19, frame = FALSE)
+abline(lm(cpsttGAD2 ~ cprtGAD2, data = clean_Control), col = "blue")
+#### The scatterplot for the Control group's GAD scores (Pre/Post) show that the data is right-skewed and is positively ascending.
+
+cprtSTAI2 <- clean_Control$pretrial_STAI
+cpsttSTAI2 <- clean_Control$posttrial_STAI
+plot(cprtSTAI2, cpsttSTAI2, main = "Control Pre/Post STAI",
+xlab = "Pre STAI Score", ylab = "Post STAI Score",
+pch = 19, frame = FALSE)
+abline(lm(cpsttSTAI2 ~ cprtSTAI2, data = clean_Control), col = "blue")
+#### The scatterplot for the control group's STAI scores (pre/Post) show that the data is slightly right-skewed and is positively ascending.
+
+eprtGAD2 <- clean_Experimental$pretrial_GAD
+epsttGAD2 <- clean_Experimental$posttrial_GAD
+plot(eprtGAD2, epsttGAD2, main = "Experimental Pre/Post GAD",
+xlab = "Pre GAD Score", ylab = "Post GAD Score",
+pch = 19, frame = FALSE)
+abline(lm(epsttGAD2 ~ eprtGAD2, data = clean_Experimental), col = "blue")
+#### The scatterplot for the Experimental group's GAD scores (pre/post) show that the data is mostly symmetrical and is again, positively ascending.
+
+eprtSTAI2 <- clean_Experimental$pretrial_STAI
+epsttSTAI2 <- clean_Experimental$posttrial_STAI
+plot(eprtSTAI2, epsttSTAI2, main = "Experimental Pre/Post STAI",
+xlab = "Pre STAI Score", ylab = "Post STAI Score",
+pch = 19, frame = FALSE)
+abline(lm(epsttSTAI2 ~ eprtSTAI2, data = clean_Experimental), col = "blue")
+#### The scatterplot for the experimental group's STAI scores (pre/post) show that the data is slightly skewed to the right and is positively ascending.
+#### From the scatterplots, we can see the data is positively ascending and the scores for GAD and STAI do regress in the majority of the instances.
+
       
 ### 7 - **Discussion** (10M)
 ##### **Outline Findings and Relation To The Hypothesis**
-* FILL THIS OUT - LEE
+#### The findings that we found for the GAD testing was:
+#### The Control group had  apositive reduction in anxiety levels when compared to the pre-experiment levels, meanwhile the Experimental group had an even bigger reduction in anxiety levels. This matches our hypothesis which states that the VR-Based therapy would yield more positive results than the traditional CBT therapy.
+
+#### The findings that we found for the STAI testing was:
+#### The Control group had a slightly positive reduction in anxiety levels when compared to the pre-experiment levels but it was very minimal. Meanwhile the Experimental group had a slight reduction too but it was still more positive than the Control group and it was more positive than the pre-experiment levels. This again, matches our hypothesis, which states that the VR-Based therapy would yield more positive results than the traditional CBT therapy.
+
+#### Overall, our hypothesis matches the findings that we found which leads us to the conclusion that VR-Based therapy does have a positive effect on patients who are undergoing treatment for anxiety disorders.
+
 
 ##### **Limitations (if confounding variables are clearly identified by your group)**
-* FILL THIS OUT - ZAK
+#### We did not identify any confounding variables as we were cleaning the data and analysing the results. The pre GAD/STAI scores were taken before the experiment began and the post GAD/STAI scores were taken after the experiment ended.
+#### At no point was there a confounding variable that made its way into the experiment that could've affected the post-experiment data.
       
 ### 8 - **References** (2.5M)
-* FILL THIS OUT - LEE/ZAK
+#### Cleaning Data: https://www.youtube.com/watch?v=sV5lwAJ7vnQ 
+
+#### Remove Outliers: https://financetrain.com/remove-outliers-r 
+
+#### Merging Several Datasets: https://www.youtube.com/watch?v=5NKiV5NEEx8
+
+#### Descriptive Statistic in R: https://statsandr.com/blog/descriptive-statistics-in-r/
+
+#### Statistical Inference: https://bookdown.org/mrenna/statbook/statistical-inference.html
+
+#### Hypothesis Testing: https://data-flair.training/blogs/hypothesis-testing-in-r/ 
+#### Hypothesis Testing: https://www.youtube.com/watch?v=oNpfjcIf2Es           
+#### Hypothesis Testing: https://www.statology.org/r-mean-of-column/
 
 
 
