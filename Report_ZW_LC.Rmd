@@ -121,11 +121,10 @@ posttrialSTAI_Experimental <- subset(Experimental, Experimental$posttrial_STAI> 
 dim(posttrialSTAI_Experimental)
 boxplot(posttrialSTAI_Experimental$posttrial_STAI)
 
-<!-- REFERENCE: https://financetrain.com/remove-outliers-r -->
+#REFERENCE: https://financetrain.com/remove-outliers-r 
 
 ### Merging New DataSets Into Base Dataset
 
-merge(Experimental, posttrialSTAI_Experimental, by="posttrial_STAI")
 
 nControl <- merge(Control, pretrialGAD_Control, keep=pretrial_GAD, obs=90)
 nnControl <- merge(nControl, posttrialGAD_Control, keep=posttrial_GAD, obs=90)
@@ -174,15 +173,11 @@ view(clean_Experimental)
 
 ### **Abstract** (2.5M)
 ##### **Aim and Rationale**
-* The aim of the experiment was to find whether the use of VR-based therapy would have a positive effect on patients who are undergoing treatment for Generalized Anxiety Disorder (GAD).
-* Virtual Reality offers immersive experiences that have the ability to simulate real-world scenarios in a controlled environment. VR allows for desensitization to certain scenarios by exposing patients to situations that can trigger anxiety. 
+* The aim of the experiment was to find whether the use of VR-based therapy would have a positive effect on patients who are undergoing treatment for Generalized Anxiety Disorder (GAD). Virtual Reality offers immersive experiences that have the ability to simulate real-world scenarios in a controlled environment. VR allows for desensitization to certain scenarios by exposing patients to situations that can trigger anxiety. 
 Post-Traumatic Stress Disorder, Acrophobia and Social Anxiety Disorders can be treated through the use of VR exposure therapy (VRET). The integration of VR into therapy practices, showcases the potential it has to make positive changes to treatments for anxiety disorder.
             
 ##### **Participants and Setting**
-* There was **180** participants in total for this study. They were **randomly sampled** from the clinic's client list. **96 were Male** and **84 were Female**. They were randomly assigned into the two groups.
-* **Control (Traditional CBT, no VR) (M = 48, F = 42)**
-* **Experimental (VR-Based Therapy) (M = 48, F = 42)**
-* All participants were between the ago of **18-40** years old.
+* There was **180** participants in total for this study. They were **randomly sampled** from the clinic's client list. **96 were Male** and **84 were Female**. They were randomly assigned into the two groups. **Control (Traditional CBT, no VR) (M = 48, F = 42)** **Experimental (VR-Based Therapy) (M = 48, F = 42)** All participants were between the ago of **18-40** years old.
 
 ##### **Experiment Design**
 * The two groups proceeded to go to 12 weeks of treatment with a therapist in 50 minute sessions. During the treatment sessions, the patients either experienced the traditional CBT or underwent the VR-Based therapy.
@@ -195,17 +190,15 @@ Post-Traumatic Stress Disorder, Acrophobia and Social Anxiety Disorders can be t
 
 ### 4 - **Introduction** (15M)
 ##### **Topic and Context**
-* The amount of people who suffer from anxiety disorders worldwide is approximately 301 million, World Health Organisation, 2019.
-* Anxiety disorders are mental disorders which can include a variety of feelings such as anxiety and fear. These feelings can cause individuals to experience a 'racing heart' and/ or 'shaky limbs'. Typically, anxiety is a response to stress but individuals who suffer from anxiety disorders tend to feel these unwanted emotions all the time. This can seriously affect their performance in physical activities, work, school or friendships.
-* Triggers for these anxiety disorders can stem from wide range of factors such as medical conditions, the surrounding environment and genetics. There are many different types of anxiety disorders. These include Generalized Anxiety Disorder, Social Anxiety Disorders, Panic Disorders, Separation Anxiety Disorder and Agoraphobia. There are many treatment options available for anxiety disorders including medication, behavior therapy and psychotherapy.
+* The amount of people who suffer from anxiety disorders worldwide is approximately 301 million, World Health Organisation, 2019. Anxiety disorders are mental disorders which can include a variety of feelings such as anxiety and fear. These feelings can cause individuals to experience a 'racing heart' and/ or 'shaky limbs'. Typically, anxiety is a response to stress but individuals who suffer from anxiety disorders tend to feel these unwanted emotions all the time. This can seriously affect their performance in physical activities, work, school or friendships.
+Triggers for these anxiety disorders can stem from wide range of factors such as medical conditions, the surrounding environment and genetics. There are many different types of anxiety disorders. These include Generalized Anxiety Disorder, Social Anxiety Disorders, Panic Disorders, Separation Anxiety Disorder and Agoraphobia. There are many treatment options available for anxiety disorders including medication, behavior therapy and psychotherapy.
 
 
 ##### **Rationale**
 * The treatment of anxiety disorders is being transformed by Virtual Reality as it can simulate real-world scenarios in a controlled environment that can be immerse and therapeutic to individuals with anxiety disorders. VR exposure therapy allows individuals to be exposed to situations that can trigger their anxiety. Through consistent sessions the individual can be desensitized to these triggers which can allow traditional cognitive-behavioral therapy. The integration of Virtual Reality into therapeutic practices shows that it has the potential to positively change the treatments for anxiety disorders.
 
 ##### **Hypothesis**
-* Is traditional Cognitive Behavioral Therapy (CBT) more effective
-than Vr-Based therapy?
+* Is traditional Cognitive Behavioral Therapy (CBT) more effective than Vr-Based therapy?
   H0 : μ1 = μ2 or μ1 - μ2 = 0.
   Ha : μ1 > μ2 or μ1 − μ2 > 0.
 
@@ -213,10 +206,10 @@ than Vr-Based therapy?
 ### 5 - **Method** (20M)
 ##### **Participants**
 * There was a grand total of 180 participants for this experiment. 96 were male while 84 were female. These 180 participants were all randomly sampled from a clinic's client list. All 180 participants were between the ages of 18-40 years old.
-* The participants were split into two groups:
-* The Control Group: Traditional CBT, no Virtual Reality involved, 48 males and 42 females.
-* The Experimental Group: VR-Based Therapy, 48 Males and 42 Female.
-* All the participants were undergoing treatment for Generalised Anxiety Disorder.
+The participants were split into two groups:
+The Control Group: Traditional CBT, no Virtual Reality involved, 48 males and 42 females.
+The Experimental Group: VR-Based Therapy, 48 Males and 42 Female.
+All the participants were undergoing treatment for Generalised Anxiety Disorder.
 
 ##### **Design**
 * This study would be a experimental design study. We step in and apply Vr-based therapy to one of the participant groups and not to the other hence experimental.
@@ -226,11 +219,97 @@ than Vr-Based therapy?
 
 ##### **Procedure**
 * The procedure of the experiment was as follows:
-* Each group (Control and Experimental) were subjected to 12 weeks of therapy treatment with 50 minutes allocated to each session. During these sessions, the patients either went through traditional CBT or VR-Based therapy. Each patient gave a measurement (on a scale of 0-21 for GAD and 20-80 for STAI) of how severe the anxiety they experienced was. They had to self-report how they were feeling. Measurements were collected at the start and end of the experiment.
+Each group (Control and Experimental) were subjected to 12 weeks of therapy treatment with 50 minutes allocated to each session. During these sessions, the patients either went through traditional CBT or VR-Based therapy. Each patient gave a measurement (on a scale of 0-21 for GAD and 20-80 for STAI) of how severe the anxiety they experienced was. They had to self-report how they were feeling. Measurements were collected at the start and end of the experiment.
       
 ### 6 - **Results** (40M)
 ##### **Descriptive Statistics**
-* FILL THIS OUT - ZAK
+*Some basic descriptive statistics from this list https://statsandr.com/blog/descriptive-statistics-in-r/
+
+min(clean_Control$pretrial_GAD)
+max(clean_Control$pretrial_GAD)
+min(clean_Control$posttrial_GAD)
+max(clean_Control$posttrial_GAD)
+min(clean_Control$pretrial_STAI)
+max(clean_Control$pretrial_STAI)
+min(clean_Control$posttrial_STAI)
+max(clean_Control$posttrial_STAI)
+
+min(clean_Experimental$pretrial_GAD)
+max(clean_Experimental$pretrial_GAD)
+min(clean_Experimental$posttrial_GAD)
+max(clean_Experimental$posttrial_GAD)
+min(clean_Experimental$pretrial_STAI)
+max(clean_Experimental$pretrial_STAI)
+min(clean_Experimental$posttrial_STAI)
+max(clean_Experimental$posttrial_STAI)
+
+
+cleanCPreTrail_GADrng <- range(clean_Control$pretrial_GAD)
+cleanCPreTrail_GADrng
+
+cleanCPostTrail_GADrng <- range(clean_Control$posttrial_GAD)
+cleanCPostTrail_GADrng
+
+cleanCPreTrail_STAIrng <- range(clean_Control$pretrial_STAI)
+cleanCPreTrail_STAIrng
+
+cleanCPostTrail_STAIrng <- range(clean_Control$posttrial_STAI)
+cleanCPostTrail_STAIrng
+
+cleanEPreTrail_GADrng <- range(clean_Experimental$pretrial_GAD)
+cleanEPreTrail_GADrng
+
+cleanEPostTrail_GADrng <- range(clean_Experimental$posttrial_GAD)
+cleanEPostTrail_GADrng
+
+cleanEPreTrail_STAIrng <- range(clean_Experimental$pretrial_STAI)
+cleanEPreTrail_STAIrng
+
+cleanEPostTrail_STAIrng <- range(clean_Experimental$posttrial_STAI)
+cleanEPostTrail_STAIrng
+
+#The functions above could get the min and max in many ways
+#I will now show how to get the range with a small portion of the data 
+max(clean_Control$pretrial_GAD) - min(clean_Control$pretrial_GAD)
+
+max(clean_Experimental$posttrial_STAI) - min(clean_Experimental$posttrial_STAI) 
+
+#Now to get the the mean for some of this data
+mean(clean_Control$posttrial_GAD)
+mean(clean_Experimental$pretrial_STAI)
+
+#Now to get the the median for some of this data
+median(clean_Control$pretrial_GAD)
+median(clean_Experimental$pretrial_GAD)
+
+#Now to get the first and third quantile of the data I will be using pretrial_GAD for these examples going further
+quantile(clean_Control$pretrial_GAD,0.25)
+quantile(clean_Experimental$pretrial_GAD,0.25)
+
+quantile(clean_Control$pretrial_GAD,0.75)
+quantile(clean_Experimental$pretrial_GAD,0.75)
+
+#Now I will get the IQR (InterQuartile Range)
+
+IQR(clean_Control$pretrial_GAD)
+IQR(clean_Experimental$pretrial_GAD)
+
+#Now I will be getting the standard deviation
+
+sd(clean_Control$pretrial_GAD)
+sd(clean_Experimental$pretrial_GAD)
+
+#Finding the Mode is more complicated as there is nor direct function 
+
+modeControl <- table(clean_Control$pretrial_GAD)
+modeExperimental <- table(clean_Experimental$pretrial_GAD)
+
+sort(modeControl, decreasing = TRUE)
+#the mode is 15
+sort(modeExperimental, decreasing = TRUE) 
+#the mode is 16
+
+
 
 ##### **Inferential Statistics**
 CPostGAD <- clean_Control$posttrial_GAD
@@ -239,7 +318,7 @@ hist(sampCPostGAD,
 main = "Histogram of Control Post-Trial GAD Scores",
 xlab = "Post-Trial GAD Scores",
 )
-<!-- Above is: Random Sample of 20 from patients in the control group after undergoing treatment for GAD -->
+##Above is: Random Sample of 20 from patients in the control group after undergoing treatment for GAD -->
 
 CPreGAD <- clean_Control$pretrial_GAD
 sampCPreGAD <- sample(CPreGAD, 20)
@@ -247,7 +326,7 @@ hist(sampCPreGAD,
 main = "Histogram of Control Pre-Trial GAD Scores",
 xlab = "Pre-Trial GAD Scores",
 )
-<!-- Above is: Random Sample of 20 from patients in the control group before undergoing treatment for GAD -->
+#Above is: Random Sample of 20 from patients in the control group before undergoing treatment for GAD -->
 
 CPostSTAI <- clean_Control$posttrial_STAI
 sampCPostSTAI <- sample(CPostSTAI, 20)
@@ -255,7 +334,7 @@ hist(sampCPostSTAI,
 main = "Histogram of Control Post-Trial STAI Scores",
 xlab = "Post-Trial STAI Scores",
 )
-<!-- Above is: Random Sample of 20 from patients in the control group after undergoing treatment for STAI -->
+#Above is: Random Sample of 20 from patients in the control group after undergoing treatment for STAI -->
 
 CPreSTAI <- clean_Control$pretrial_STAI
 sampCPreSTAI <- sample(CPreSTAI, 20)
@@ -263,7 +342,7 @@ hist(sampCPreSTAI,
 main = "Histogram of Control Pre-Trial STAI Scores",
 xlab = "Pre-Trial STAI Scores",
 )
-<!-- Above is: Random Sample of 20 from patients in the control group before undergoing treatment for STAI -->
+#Above is: Random Sample of 20 from patients in the control group before undergoing treatment for STAI -->
 
 EPostGAD <- clean_Experimental$posttrial_GAD
 sampEPostGAD <- sample(EPostGAD, 20)
@@ -271,7 +350,7 @@ hist(sampEPostGAD,
 main = "Histogram of Experimental Post-Trial GAD Scores",
 xlab = "Post-Trial GAD Scores",
 )
-<!-- Above is: Random Sample of 20 from patients in the Experimental group after undergoing treatment for GAD -->
+#Above is: Random Sample of 20 from patients in the Experimental group after undergoing treatment for GAD -->
 
 EPreGAD <- clean_Experimental$pretrial_GAD
 sampEPreGAD <- sample(EPreGAD, 20)
@@ -279,7 +358,7 @@ hist(sampEPreGAD,
 main = "Histogram of Experiemtnal Pre-Trial GAD Scores",
 xlab = "Pre-Trial GAD Scores",
 )
-<!-- Above is: Random Sample of 20 from patients in the Experimental group before undergoing treatment for GAD -->
+#Above is: Random Sample of 20 from patients in the Experimental group before undergoing treatment for GAD -->
 
 EPostSTAI <- clean_Experimental$posttrial_STAI
 sampEPostSTAI <- sample(EPostSTAI, 20)
@@ -287,7 +366,7 @@ hist(sampEPostSTAI,
 main = "Histogram of Experiemtnal Post-Trial STAI Scores",
 xlab = "Post-Trial STAI Scores",
 )
-<!-- Above is: Random Sample of 20 from patients in the Experimental group after undergoing treatment for STAI -->
+#Above is: Random Sample of 20 from patients in the Experimental group after undergoing treatment for STAI -->
 
 EPreSTAI <- clean_Experimental$pretrial_STAI
 sampEPreSTAI <- sample(EPreSTAI, 20)
@@ -295,29 +374,29 @@ hist(sampEPreSTAI,
 main = "Histogram of Experiemtnal Pre-Trial STAI Scores",
 xlab = "Pre-Trial STAI Scores",
 )
-<!-- Above is: Random Sample of 20 from patients in the Experimental group before undergoing treatment for STAI -->
-<!-- REFERENCE: https://bookdown.org/mrenna/statbook/statistical-inference.html -->
+#Above is: Random Sample of 20 from patients in the Experimental group before undergoing treatment for STAI -->
+#REFERENCE: https://bookdown.org/mrenna/statbook/statistical-inference.html -->
 
 ##### **Statistical Tests**
-shapiro.test(posttrialGAD_Control$posttrial_GAD)
-shapiro.test(posttrialSTAI_Control$posttrial_STAI)
-shapiro.test(Experimental$posttrial_GAD)
-shapiro.test(posttrialSTAI_Experimental$posttrial_STAI)
+shapiro.test(clean_Control$posttrial_GAD)
+shapiro.test(clean_Control$posttrial_STAI)
+shapiro.test(clean_Experimental$posttrial_GAD)
+shapiro.test(clean_Experimental$posttrial_STAI)
 ####The Hypothesis Test:
-qplot(posttrialGAD_Control$posttrial_GAD, 
+qplot(clean_Control$posttrial_GAD, 
 geom = "histogram")
-qplot(posttrialSTAI_Experimental$posttrial_STAI, geom = "histogram")
+qplot(clean_Experimental$posttrial_STAI, geom = "histogram")
 
-controlGADmean <- mean(posttrialGAD_Control$posttrial_GAD)
+controlGADmean <- mean(clean_Control$posttrial_GAD)
 
-t.test(Experimental$posttrial_GAD, mu = controlGADmean)
+t.test(clean_Experimental$posttrial_GAD, mu = controlGADmean)
 
-controlSTAImean <- mean(posttrialSTAI_Control$posttrial_STAI)
+controlSTAImean <- mean(clean_Control$posttrial_STAI)
 
-t.test(posttrialSTAI_Experimental$posttrial_STAI, mu = controlSTAImean)
-<!-- Reference: https://data-flair.training/blogs/hypothesis-testing-in-r/
-     https://www.youtube.com/watch?v=oNpfjcIf2Es 
-     https://www.statology.org/r-mean-of-column/ -->
+t.test(clean_Experimental$posttrial_STAI, mu = controlSTAImean)
+#Reference: https://data-flair.training/blogs/hypothesis-testing-in-r/ https://www.youtube.com/watch?v=oNpfjcIf2Es           https://www.statology.org/r-mean-of-column/ -->
+     
+# It appears as though the data points to the hyothesis being accepted
 ##### **Magnitude and Direction of Results**
 * FILL THIS OUT - LEE
       
