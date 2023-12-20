@@ -123,6 +123,18 @@ boxplot(posttrialSTAI_Experimental$posttrial_STAI)
 
 <!-- REFERENCE: https://financetrain.com/remove-outliers-r -->
 
+### Merging New DataSets Into Base Dataset
+
+merge(Experimental, posttrialSTAI_Experimental, by="posttrial_STAI")
+
+nControl <- merge(Control, pretrialGAD_Control, keep=pretrial_GAD, obs=90)
+nnControl <- merge(nControl, posttrialGAD_Control, keep=posttrial_GAD, obs=90)
+clean_Control <- merge(nnControl, posttrialSTAI_Control, keep=posttrial_STAI, obs=90)
+view(clean_Control)
+
+clean_Experimental <- merge(Experimental, posttrialSTAI_Experimental, keep=posttrial_STAI, obs=90)
+view(clean_Experimental)
+
 ### **Abstract**
 
 ##### **Aim and Rationale**
@@ -221,7 +233,9 @@ than Vr-Based therapy?
 * FILL THIS OUT - ZAK
 
 ##### **Inferential Statistics**
-<!-- C_pretrial_GAD <- pretrialGAD_Control -->
+C_pretrialGAD <- pretrialGAD_Control
+samp_CpretrialGAD <- sample(C_pretrialGAD, 10)
+mean(samp_CpretrialGAD)
 
 
 ##### **Statistical Tests**
