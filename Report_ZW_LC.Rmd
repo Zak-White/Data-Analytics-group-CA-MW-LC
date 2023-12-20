@@ -233,10 +233,70 @@ than Vr-Based therapy?
 * FILL THIS OUT - ZAK
 
 ##### **Inferential Statistics**
-C_pretrialGAD <- pretrialGAD_Control
-samp_CpretrialGAD <- sample(C_pretrialGAD, 10)
-mean(samp_CpretrialGAD)
+CPostGAD <- clean_Control$posttrial_GAD
+sampCPostGAD <- sample(CPostGAD, 20)
+hist(sampCPostGAD,
+main = "Histogram of Control Post-Trial GAD Scores",
+xlab = "Post-Trial GAD Scores",
+)
+<!-- Above is: Random Sample of 20 from patients in the control group after undergoing treatment for GAD -->
 
+CPreGAD <- clean_Control$pretrial_GAD
+sampCPreGAD <- sample(CPreGAD, 20)
+hist(sampCPreGAD,
+main = "Histogram of Control Pre-Trial GAD Scores",
+xlab = "Pre-Trial GAD Scores",
+)
+<!-- Above is: Random Sample of 20 from patients in the control group before undergoing treatment for GAD -->
+
+CPostSTAI <- clean_Control$posttrial_STAI
+sampCPostSTAI <- sample(CPostSTAI, 20)
+hist(sampCPostSTAI,
+main = "Histogram of Control Post-Trial STAI Scores",
+xlab = "Post-Trial STAI Scores",
+)
+<!-- Above is: Random Sample of 20 from patients in the control group after undergoing treatment for STAI -->
+
+CPreSTAI <- clean_Control$pretrial_STAI
+sampCPreSTAI <- sample(CPreSTAI, 20)
+hist(sampCPreSTAI,
+main = "Histogram of Control Pre-Trial STAI Scores",
+xlab = "Pre-Trial STAI Scores",
+)
+<!-- Above is: Random Sample of 20 from patients in the control group before undergoing treatment for STAI -->
+
+EPostGAD <- clean_Experimental$posttrial_GAD
+sampEPostGAD <- sample(EPostGAD, 20)
+hist(sampEPostGAD,
+main = "Histogram of Experimental Post-Trial GAD Scores",
+xlab = "Post-Trial GAD Scores",
+)
+<!-- Above is: Random Sample of 20 from patients in the Experimental group after undergoing treatment for GAD -->
+
+EPreGAD <- clean_Experimental$pretrial_GAD
+sampEPreGAD <- sample(EPreGAD, 20)
+hist(sampEPreGAD,
+main = "Histogram of Experiemtnal Pre-Trial GAD Scores",
+xlab = "Pre-Trial GAD Scores",
+)
+<!-- Above is: Random Sample of 20 from patients in the Experimental group before undergoing treatment for GAD -->
+
+EPostSTAI <- clean_Experimental$posttrial_STAI
+sampEPostSTAI <- sample(EPostSTAI, 20)
+hist(sampEPostSTAI,
+main = "Histogram of Experiemtnal Post-Trial STAI Scores",
+xlab = "Post-Trial STAI Scores",
+)
+<!-- Above is: Random Sample of 20 from patients in the Experimental group after undergoing treatment for STAI -->
+
+EPreSTAI <- clean_Experimental$pretrial_STAI
+sampEPreSTAI <- sample(EPreSTAI, 20)
+hist(sampEPreSTAI,
+main = "Histogram of Experiemtnal Pre-Trial STAI Scores",
+xlab = "Pre-Trial STAI Scores",
+)
+<!-- Above is: Random Sample of 20 from patients in the Experimental group before undergoing treatment for STAI -->
+<!-- REFERENCE: https://bookdown.org/mrenna/statbook/statistical-inference.html -->
 
 ##### **Statistical Tests**
 shapiro.test(posttrialGAD_Control$posttrial_GAD)
